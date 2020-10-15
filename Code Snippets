@@ -1,0 +1,21 @@
+import maya.cmds as cmds 
+if not cmds.commandPort(':4434', q=True): 
+    cmds.commandPort(n=':4434')
+print('>>>Maya charm Port Open')
+
+
+
+import sys
+sys.path.append('C:\Program Files\Autodesk\Maya2020\Python\Lib\site-packages\pycharm-debug.egg')
+sys.path.append('C:\Program Files\JetBrains\PyCharm 2019.2.4\helpers\pydev')
+sys.path.append('C:\Python27\Lib\site-packages')
+import pydevd_pycharm
+pydevd_pycharm.settrace('localhost', port=7740, suspend=False)
+
+
+
+pydevd_pycharm.stoptrace()
+
+
+
+from pydevd import stoptrace
